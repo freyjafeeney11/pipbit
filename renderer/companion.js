@@ -65,7 +65,7 @@
       Procreate:     ["oh we're drawing? i love drawing.", 'making something for the shop?'],
       Slack:         ['slack...', 'are you actually going to respond to that?', 'i saw that notification. you saw that notification.'],
       Discord:       ['discord? 5 minute break or actual work?', "don't let discord eat your afternoon."],
-      Mail:          ["emails. everyone's favourite.", 'reply or archive. those are the only two options.', "i wouldn't start that email like that if i were you."],
+      'Gmail':          ["emails. *shivers*", 'reply or archive. those are the only two options.', "i wouldn't start that email like that if i were you."],
       Spotify:       ['good soundtrack choice.', 'music makes everything better.', 'what are we listening to?'],
       YouTube:       ['youtube... is this research or a rabbit hole?', '5 minute break or 2 hour documentary?'],
       Netflix:       ['ok we are definitely not working.', 'deserved. carry on.', 'no judgement. well. a little.'],
@@ -75,7 +75,7 @@
     idle: {
       short:  ['what was i doing..?', 'hi', '...'],
       medium: ["im working on my novel...", "i'm still here if you need me.", 'hey hey click me'],
-      long:   ["what time is it..?", "we've been at this for awhile.", 'time for a break for you?'],
+      long:   ["what time is it..?", "is this thing still on?", 'did u forget to turn your computer off?'],
     },
     general: [
       'be careful of this bluelight..',
