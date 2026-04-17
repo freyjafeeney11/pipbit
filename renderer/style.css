@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Transparent window body */
+body {
+  background: transparent;
+  overflow: hidden;
+  width: 240px;
+  min-height: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 4px;
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* ── Speech bubble ───────────────────────────────────────────────────── */
+
+.bubble {
+  position: absolute;
+  top: auto;
+  /* Sit just above the ~180px-tall character at the bottom of the window */
+  bottom: 184px;
+  left: 8px;
+  right: 8px;
+  z-index: 20;
+  max-height: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #222;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.bubble.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+}
+
+.bubble.bubble-anim {
+  animation: bubble-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bubble-pop {
+  from {
+    transform: translateY(6px) scale(0.96);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bubble-tail {
+  position: absolute;
+  bottom: -7px;
+  left: 28px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid white;
+}
+
+/* ── Companion character ─────────────────────────────────────────────── */
+
+.companion {
+  width: 160px;
+  height: 180px;
+  cursor: grab;
+  transition: transform 0.1s ease;
+  -webkit-app-region: no-drag;
+}
+
+.companion:hover {
+  transform: translateY(-2px);
+}
+
+.companion:active {
+  cursor: grabbing;
+}
+
+/* ── Mood expressions ────────────────────────────────────────────────── */
+
+.mood-happy #c-mouth {
+  d: path('M74 90 Q80 97 86 90');
+}
+
+.mood-tired #brow-l {
+  transform: rotate(3deg);
+  transform-origin: center;
+}
+
+.mood-focused #c-mouth {
+  d: path('M75 91 Q80 91 85 91');
+}

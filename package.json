@@ -1,0 +1,17 @@
+{
+  "name": "desk-companion",
+  "version": "0.1.0",
+  "description": "A cute AI-powered desktop companion",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "dependencies": {
+    "active-win": "^8.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0"
+  }
+}

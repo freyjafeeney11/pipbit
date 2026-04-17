@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Speech bubble — appears above the character -->
+  <div id="bubble" class="bubble hidden">
+    <span id="bubble-text"></span>
+    <div class="bubble-tail"></div>
+  </div>
+
+  <!-- id must NOT be "companion" — that name is reserved for the preload API on window -->
+  <div id="pip-root" class="companion">
+    <svg id="char-svg" viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- DESK -->
+      <rect x="10" y="118" width="140" height="8" rx="2" fill="#A0896A"/>
+      <rect x="14" y="124" width="132" height="38" rx="2" fill="#7A6248"/>
+      <rect x="18" y="158" width="10" height="16" rx="2" fill="#6B5540"/>
+      <rect x="132" y="158" width="10" height="16" rx="2" fill="#6B5540"/>
+      <!-- Drawer -->
+      <rect x="56" y="132" width="48" height="22" rx="3" fill="#6B5540"/>
+      <circle cx="80" cy="143" r="2.5" fill="#C4A882"/>
+      <!-- Keyboard -->
+      <rect x="38" y="113" width="60" height="8" rx="2" fill="#d5d2cc"/>
+      <!-- Coffee -->
+      <rect x="118" y="106" width="14" height="16" rx="2" fill="#e8d5b7"/>
+      <rect x="118" y="106" width="14" height="5" rx="2" fill="#c4956a"/>
+      <path d="M132 110 Q138 110 138 114 Q138 119 132 119" stroke="#e8d5b7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Steam -->
+      <path d="M122 103 Q120 99 122 95" stroke="#bbb" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M127 101 Q125 97 127 93" stroke="#bbb" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <!-- Plant -->
+      <rect x="18" y="108" width="8" height="12" rx="2" fill="#c4956a"/>
+      <ellipse cx="22" cy="106" rx="9" ry="7" fill="#4a7c59"/>
+      <ellipse cx="17" cy="103" rx="6" ry="4" fill="#5a9068"/>
+      <ellipse cx="28" cy="104" rx="5" ry="4" fill="#3d6b4a"/>
+
+      <!-- MONITOR -->
+      <rect x="54" y="68" width="72" height="52" rx="4" fill="#2a2a3a"/>
+      <rect x="57" y="71" width="66" height="42" rx="3" fill="#1a1a2e"/>
+      <rect x="61" y="77" width="38" height="2" rx="1" fill="#3a3a6a" opacity="0.8"/>
+      <rect x="61" y="82" width="26" height="2" rx="1" fill="#3a3a6a" opacity="0.6"/>
+      <rect x="61" y="87" width="32" height="2" rx="1" fill="#3a3a6a" opacity="0.6"/>
+      <rect x="77" y="118" width="6" height="6" rx="1" fill="#2a2a3a"/>
+      <rect x="72" y="123" width="16" height="3" rx="1" fill="#2a2a3a"/>
+
+      <!-- CHARACTER -->
+      <!-- Body -->
+      <rect id="c-body" x="62" y="88" width="36" height="34" rx="8" fill="#f5e6d3"/>
+      <!-- Shirt -->
+      <rect id="c-shirt" x="62" y="102" width="36" height="20" rx="8" fill="#6c9edd"/>
+      <!-- Head -->
+      <ellipse id="c-skin" cx="80" cy="78" rx="20" ry="22" fill="#f5e6d3"/>
+      <!-- Ears -->
+      <ellipse id="c-ear-l" cx="60" cy="80" rx="4" ry="5" fill="#f0d9c0"/>
+      <ellipse id="c-ear-r" cx="100" cy="80" rx="4" ry="5" fill="#f0d9c0"/>
+      <!-- Hair -->
+      <ellipse id="c-hair" cx="80" cy="60" rx="20" ry="12" fill="#4a3728"/>
+      <rect id="c-hair-l" x="60" y="60" width="8" height="14" rx="4" fill="#4a3728"/>
+      <rect id="c-hair-r" x="92" y="60" width="8" height="14" rx="4" fill="#4a3728"/>
+      <!-- Eyes -->
+      <ellipse cx="73" cy="78" rx="5" ry="6" fill="white"/>
+      <ellipse cx="87" cy="78" rx="5" ry="6" fill="white"/>
+      <ellipse id="pupil-l" cx="74" cy="79" rx="3" ry="3.5" fill="#2a1f1a"/>
+      <ellipse id="pupil-r" cx="88" cy="79" rx="3" ry="3.5" fill="#2a1f1a"/>
+      <ellipse cx="75" cy="78" rx="1" ry="1" fill="white"/>
+      <ellipse cx="89" cy="78" rx="1" ry="1" fill="white"/>
+      <!-- Eyebrows -->
+      <line id="brow-l" x1="68" y1="71" x2="78" y2="72" stroke="#3a2a1a" stroke-width="2" stroke-linecap="round"/>
+      <line id="brow-r" x1="83" y1="72" x2="93" y2="71" stroke="#3a2a1a" stroke-width="2" stroke-linecap="round"/>
+      <!-- Nose -->
+      <ellipse cx="80" cy="84" rx="2.5" ry="1.8" fill="#e8c8a8" opacity="0.6"/>
+      <!-- Mouth -->
+      <path id="c-mouth" d="M74 90 Q80 95 86 90" stroke="#c4756a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- Glasses -->
+      <rect x="66" y="73" width="13" height="10" rx="4" fill="none" stroke="#5a5a7a" stroke-width="1.5"/>
+      <rect x="81" y="73" width="13" height="10" rx="4" fill="none" stroke="#5a5a7a" stroke-width="1.5"/>
+      <line x1="79" y1="78" x2="81" y2="78" stroke="#5a5a7a" stroke-width="1.5"/>
+      <line x1="60" y1="78" x2="66" y2="78" stroke="#5a5a7a" stroke-width="1.5"/>
+      <line x1="94" y1="78" x2="100" y2="78" stroke="#5a5a7a" stroke-width="1.5"/>
+      <!-- Arms -->
+      <rect id="c-arm-l" x="46" y="108" width="20" height="10" rx="5" fill="#f5e6d3"/>
+      <rect id="c-arm-r" x="94" y="108" width="20" height="10" rx="5" fill="#f5e6d3"/>
+
+    </svg>
+  </div>
+
+  <script src="companion.js"></script>
+</body>
+</html>

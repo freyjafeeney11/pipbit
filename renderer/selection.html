@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select region</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: crosshair;
+      font-family: system-ui, sans-serif;
+    }
+    #dim {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    #box {
+      position: fixed;
+      border: 2px solid #6c9edd;
+      background: rgba(108, 158, 221, 0.12);
+      pointer-events: none;
+      display: none;
+      box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
+    }
+    #hint {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20, 20, 28, 0.92);
+      color: #eee;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      pointer-events: none;
+      max-width: 90vw;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="dim"></div>
+  <div id="box"></div>
+  <div id="hint">Drag to select an area · Esc to cancel</div>
+  <script src="selection.js"></script>
+</body>
+</html>
